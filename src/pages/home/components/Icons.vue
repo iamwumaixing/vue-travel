@@ -60,9 +60,9 @@ export default {
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item,index) => {
+      this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8)
-        if(!pages[page]){
+        if (!pages[page]) {
           pages[page] = []
         }
         pages[page].push(item)
@@ -84,12 +84,12 @@ export default {
     .icon
       position relative
       overflow hidden
-      float left 
+      float left
       width 25%
       height 0
       padding-bottom 25%
       .icon-img
-        position absolute 
+        position absolute
         top 0
         left 0
         right 0
@@ -101,7 +101,7 @@ export default {
           display block
           margin 0 auto
       .icon-desc
-        position absolute 
+        position absolute
         left 0
         right 0
         bottom 0
