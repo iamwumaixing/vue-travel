@@ -36,10 +36,10 @@ export default {
   .wrapper >>> .swiper-pagination-bullet-active
     background: #fff
   .wrapper
-    overflow: hidden
-    width : 100%
-    height : 0
-    padding-bottom : 28%
+    overflow hidden
+    width 100%
+    height 0
+    padding-bottom 26.7%
     .swiper-img
-      width: 100%
+      width 100%
 </style>
