@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="showSwiper">
         <!-- slides -->
-        <swiper-slide v-for="item of swiperList" :key="item.id">
+        <swiper-slide v-for="item of list" :key="item.id">
           <img class="swiper-img" :src="item.imgUrl">
         </swiper-slide>
         <!-- Optional controls -->
@@ -18,17 +18,19 @@ export default {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
-        loop: true
-      },
-      swiperList: [{
-        id: '0001',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/87a224d0349d94a11e97f31aa1aba4f5.jpg_750x200_1f78af87.jpg'
-      }, {
-        id: '0002',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/e02cceb2dbbfcd2871cdb7531cf311f1.jpg_750x200_63d3d88b.jpg'
-      }]
+        loop: true,
+        autoplay: 5000
+      }
     }
-  }
+  },
+  props: {
+    list: Array
+  },
+  computed: {
+    showSwiper () {
+      return this.list.length
+    }
+  },
 }
 </script>
 
@@ -36,10 +38,11 @@ export default {
   .wrapper >>> .swiper-pagination-bullet-active
     background: #fff
   .wrapper
+    position relative
     overflow hidden
     width 100%
     height 0
-    padding-bottom 26.7%
+    padding-bottom 31%
     .swiper-img
       width 100%
 </style>
