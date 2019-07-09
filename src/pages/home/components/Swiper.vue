@@ -30,7 +30,7 @@ export default {
     showSwiper () {
       return this.list.length
     }
-  },
+  }
 }
 </script>
 
